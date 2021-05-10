@@ -23,7 +23,7 @@ function make_plot(csv_data){
         afg_extension_y.push(stretch(prediction, 0, 1, min_mortality, max_mortality));
     }
 
-    //Same process is repeated for the other countries (probs should use some kind of loop but i aint got time for dat)
+    //Same process is repeated for the other countries (probs should figure out a way to make it work via a loop but i aint got time for dat)
     let png_data = csv_data.filter(d => d.country == "Papua New Guinea");
     let png_mortality_data = png_data.map(d => Number(d.mortality))
     let png_min_mortality = Math.min(...png_mortality_data)
@@ -88,6 +88,7 @@ function make_plot(csv_data){
         tim_extension_y.push(stretch(tim_prediction, 0, 1, tim_min_mortality, tim_max_mortality));
     }
 
+    // Selected past data is processed into arrays via the processData function 
     Plotly.d3.csv("https://raw.githubusercontent.com/edwardhxhuang/DECO3100/main/child-mortality-data.csv", function (data) {
     processData(data);
     });
@@ -108,7 +109,7 @@ function make_plot(csv_data){
         makePlot(year,aus,afg,ind,png,sol,tim)
     };
 
-    
+    //Traces are made and plotted    
     function makePlot(year,aus,afg,ind,png,sol,tim){
     var traces = [{
         x: year,
@@ -273,7 +274,6 @@ function make_plot(csv_data){
 
 Plotly.d3.csv("https://raw.githubusercontent.com/edwardhxhuang/DECO3100/main/mortality.csv", make_plot);
 
-//This stretch function is actually just the map function from p5.js
 function stretch(n, start1, stop1, start2, stop2) {
     return ((n-start1)/(stop1-start1))*(stop2-start2)+start2;
 };
