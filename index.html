@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reducing child mortality: a multi-faceted approach</title>
+    <!-- Install tailwind via css to make styling simpler. -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
     <link
         rel="stylesheet"
         href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
         />
+    <!-- Plotly and regression libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    <!-- Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <div class="w-full bg-cover bg-center" style="height:32rem; background-image: url(https://media.npr.org/assets/img/2017/05/17/aid-1_wide-6117513f8733eb57f11dda487d44f6d7349f3256-s1600-c85.webp);">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
             <div class="text-center">
-                <h1 class="text-5xl py-4 font-bold" style="color: white;">Australian Foreign Aid</h1>
+                <h1 class="text-5xl py-4 font-bold text-white">Australian Foreign Aid</h1>
                 <h2 class="text-2xl text-white italic">Reducing child mortality: a multi-faceted approach</h2>
                 <div class="text-base text-white py-6"><h3>By <b>Edward Huang</b></h3>
                     <h3 class="text-base text-white">May 10, 2021</h3>
@@ -29,11 +32,11 @@
     <div class="py-12 prose prose-sm sm:prose lg:prose-lg mx-auto">
         <h2>How does Australia's overseas aid program support developing nations?</h2>
         <p>Australia invests $4 billion annually towards development assistance with a focus on tackling poverty, improving prosperity, and security particularly in the Asia-Pacific region. This support is delivered through a combination of targeted government-partnered programs, investment into third party NGOs, community programs, and multilateral international organisations such as the United Nations and the World Health Organisation.</p>
-        <h2>
+        <h3>
             Who are Australia’s major foreign aid recipients?
-        </h2>
+        </h3>
         <h4>The Top 5 Recipients of Australian Aid 2019-20</h4>
-        <div id="sankey">
+        <div data-aos="fade-right" id="sankey">
             <script src="sankey.js"></script>
         </div>
         <ul>
@@ -43,41 +46,57 @@
             <li><b>Afghanistan</b> - Decades of war in Afghanistan have left the country with serious challenges to face. Australia contributes to recovery efforts alongside its allies.</li>
             <li><b>East Timor</b> - As with PNG, Indonesia is a close neighbour and strategic partner with a large population of 270 million.</li>
         </ul>
-        <p>The socioeconomic and environmental disadvantage experienced by people of these countries cause a number of inequities that can lead to poor health and low life expectancy. The inequality in health that exists can clearly be seen through the large disparity in levels of child mortality. Whilst significant progress has been made in the last half-century, these countries still have extremely high child mortality rates compared to high-income nations such as Australia.</p>
+        <p>The socioeconomic and environmental disadvantage experienced by people of these countries cause a number of inequities that can lead to poor health and low life expectancy. The inequality in health outcomes that exists can clearly be seen through the large disparity in levels of child mortality. Whilst significant progress has been made in the last half-century, these countries still have extremely high child mortality rates compared to high-income nations such as Australia.</p>
         <h4>Child Mortality Rates (2017)</h4>
         <p>Number of child (under five years old) deaths per 1000 births</p>
-        <div id="child-mortality-bar">
+        <div data-aos="fade-up" id="child-mortality-bar">
             <script src="child-mortality-bar.js"></script>
         </div>
         <h3>The Global Goal for 2030</h3>
         <p>As a part of the United Nation's Sustainable Development Goals established in 2015, every country in the world is committed to reducing the child mortality rate to 2.5% (25 deaths per 1000 births) by 2030. It is a tremendously important goal in reducing global suffering, however currently these nations are still far away from reaching the target.</p>
-        <p>Based on historic trends and rates of improvement we are able to make a reasonable prediction into the future. According to this projection, the countries are on track to reach this level by 2028. While this is a positive indicator, much work needs to be carried out to sucessfully achieve this in reality.</p>
+        <p>Based on historic trends and rates of improvement we are able to make a reasonable prediction into the future. According to this projection, these Australian aid supported countries are all on track to reach this level by 2028. While this is a positive indicator, there is a lot of work that needs to be carried out to successfully achieve this in reality.</p>
         <h4>Child Mortality Projection</h4>
-        <div id="child-mortality-predictor">
+        <div data-aos="fade-right" id="child-mortality-predictor">
             <script src="child-mortality-predictor.js"></script>
         </div>
         <h2>
-            Investment Priorities
+            Investment Priorities and Challenges
         </h2>
-        <p>Australia allocates it’s aid budget into improving specific focus areas based on a country's individual needs.</p>
-        <div id="investment-vis">
+        <p>Australia allocates it’s aid budget into improving specific focus issues based on a country's individual needs. Reducing child mortality in these countries is dependent not only upon investment into a single sector, but rather each division works in conjuction to strategically tackle problems from different vantage points.</p>
+        <div data-aos="fade-right" id="investment-vis">
             <script src="investment-vis.js"></script>
         </div>
         <h4>People with access to at least basic drinking water services (% of population)</h4>
-        <div id="water-access">
+        <div data-aos="fade-right" id="water-access">
             <script src="water-access.js"></script>
         </div>
+        <p>Inadequate access to safely-managed drinking water and is still alarmingly prevalent amongst these nations. Australia’s investment into health and infrastructure works to improve water and sanitation through initiatives such as delivering water tanks for rural communities, and building resilient water infrastructure to improve wastewater management.
+            </p>
+        <p>Investments into governance also support this; an effective public sector better invests a country’s own resources into addressing these challenges and improves service delivery at provincial and district levels.</p>
+        <h4>Density of medical doctors (per 10,000 population)</h4>
+        <div data-aos="fade-right" id="doctor-density">
+            <script src="doctor-density.js"></script>
+        </div>
+            <p>There is a significant shortage of health workers in these nations causing a weaker health system, and therefore lower access to quality health services that are vital to maintaing a high level of public health.</p>
         <h4>Births attended by skilled health staff (% of total)</h4>
-        <div id="childbirth-vis">
+        <div data-aos="fade-right" id="childbirth-vis">
             <script src="childbirth-vis.js"></script>
         </div>
-        <p>Half of all under-5 deaths still occur in the first month of life. Key to preventing newborn deaths is ensuring every birth is attended by a skilled health personnel and every woman and newborn receives care within </p>
+        <p>Key to preventing newborn deaths is ensuring every birth is attended by a skilled health personnel and every woman and newborn receives adequate care during the postnatal period. Half of all under-5 deaths still occur in the first month of life. </p>
+        <p>Australian aid investment into education aims to bridge this deficit through improving the quality of schooling, training educators, offering scholarships, and providing specialist skills from Australian education institutions to enable young people to gain the skills and qualifications to become skilled workers.</p>
         <h2>References</h2>
         <ul>
+            <li>Commonwealth of Australia. (2019, April). <em>Australian Aid Budget Summary 2019–20.</em> Department of Foreign Affairs and Trade (DFAT). https://www.dfat.gov.au/sites/default/files/2019-20-australian-aid-budget-summary.pdf</li>
             <li>Ikon Images, & Butt, M. B. (n.d.). [Charitable Giving]. https://media.npr.org/assets/img/2017/05/17/aid-1_wide-6117513f8733eb57f11dda487d44f6d7349f3256-s1600-c85.webp</li>
             <li>Roser, M. R. (2019). <em>Child mortality: achieving the global goal for 2030 would be a huge achievement - but we are currently far away.</em> Our World in Data. https://ourworldindata.org/child-mortality-global-goal</li>
+            <li><em>Sectors and partners | Australian aid tracker.</em> (2021, May 3). Australian Aid Tracker. http://devpolicy.org/aidtracker/sectors/</li>
             <li><em>Who we work with.</em> (2021). Australian Government Department of Foreign Affairs and Trade. https://www.dfat.gov.au/aid/who-we-work-with/Pages/who-we-work-with</li>
+            <li>The World Bank. (2021, April 26). <em>World Development Indicators (WDI)</em> | Data Catalog [Dataset]. https://datacatalog.worldbank.org/dataset/world-development-indicators</li>
         </ul>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

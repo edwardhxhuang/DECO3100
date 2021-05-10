@@ -10,10 +10,14 @@ var trace1 = {
   var data = [trace1];
   
   var layout = {
+    font: {
+      family: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+      size: 12
+    },
     margin: {
-        // l: 50,
-        // r: 50,
-        b: 70,
+        l: 20,
+        r: 30,
+        b: 30,
         t: 10,
     }
   };

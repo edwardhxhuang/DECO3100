@@ -89,7 +89,7 @@ function makePlot(year,aus,afg,ind,png,sol,tim){
         margin: {
           l: 50,
           r: 50,
-          b: 20,
+          b: 30,
           t: 0,
           pad: 4
         },

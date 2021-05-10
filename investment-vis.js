@@ -3,7 +3,10 @@ var trace1 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],  
     name: 'Education',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#15607A'
+    }
 };
   
 var trace2 = {
@@ -11,7 +14,10 @@ var trace2 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'Health',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#09BB9F'
+    }
 };
 
 var trace3 = {
@@ -19,7 +25,10 @@ var trace3 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'Infrastructure and Trade',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#427EDA'
+    }
 };
 
 var trace4 = {
@@ -27,7 +36,10 @@ var trace4 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'Agriculture, Fisheries and Water',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#C71E1D'
+    }
 };
 
 var trace5 = {
@@ -35,7 +47,10 @@ var trace5 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'Effective Governance',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#FA8C00'
+    }
 };
 
 var trace6 = {
@@ -43,6 +58,9 @@ var trace6 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'Building Resilience',
     type: 'bar',
+    marker: {
+        color: '#FCC243'
+    }, 
     orientation: 'h'
 };
 
@@ -51,19 +69,32 @@ var trace7 = {
     y: ['PNG ', 'Indonesia ', 'Solomon Islands ', 'Afghanistan ', 'East Timor '],
     name: 'General Development Support',
     type: 'bar',
-    orientation: 'h'
+    orientation: 'h',
+    marker: {
+        color: '#AB45C6'
+    }
 };
 
 var data = [trace1, trace2, trace3, trace4, trace5, trace6, trace7];
 
 var layout = {
-            barmode: 'stack',
-            margin: {
-                l: 120,
-                t:10,
-                b:20
-            }
-        };
+    font: {
+        family: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+        size: 12
+      },
+    barmode: 'stack',
+    legend: {
+        orientation: 'h'
+    },
+    xaxis: {
+        ticksuffix: "%"
+    },
+    margin: {
+        l: 120,
+        t:10,
+        b:20
+    }
+};
 
         
 

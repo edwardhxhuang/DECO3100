@@ -1,3 +1,4 @@
+//country colors are declared to be consistent throughout the site 
 const countryColours = {
   aus: "3B82F6",
   png: "EF4444",

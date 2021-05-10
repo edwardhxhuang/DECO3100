@@ -172,7 +172,8 @@ function make_plot(csv_data){
         name: 'Afghanistan',
         hovertemplate: 'Predicted: %{y:.1f}',
         line: {
-            dash: 'dot',
+            dash: 'dashdot',
+            width: 2,
             color: countryColours.afg
         }
     },
@@ -183,7 +184,8 @@ function make_plot(csv_data){
         name: 'Papua New Guinea',
         hovertemplate: 'Predicted: %{y:.1f}',
         line: {
-            dash: 'dot',
+            dash: 'dashdot',
+            width: 2,
             color: countryColours.png
         }
     },
@@ -194,7 +196,8 @@ function make_plot(csv_data){
         name: 'Solomon Islands',
         hovertemplate: 'Predicted: %{y:.1f}',
         line: {
-            dash: 'dot',
+            dash: 'dashdot',
+            width: 2,
             color: countryColours.sol
         }
     },
@@ -205,7 +208,8 @@ function make_plot(csv_data){
         name: 'Indonesia',
         hovertemplate: 'Predicted: %{y:.1f}',
         line: {
-            dash: 'dot',
+            dash: 'dashdot',
+            width: 2,
             color: countryColours.ind
         }
     },
@@ -216,8 +220,21 @@ function make_plot(csv_data){
         name: 'Timor',
         hovertemplate: 'Predicted: %{y:.1f}',
         line: {
-            dash: 'dot',
+            dash: 'dashdot',
+            width: 2,
             color: countryColours.tim
+        }
+    },
+    {
+        x: [2018,2030],
+        y: [25, 25],
+        mode: 'lines',
+        name: '2030 Goal',
+        hovertemplate: 'Target: %{y:.1f}',
+        line: {
+            dash: 'dot',
+            width: 1,
+            color: '#000000'
         }
     }
     ];
@@ -227,16 +244,16 @@ function make_plot(csv_data){
             l: 30,
             r: 0,
             t: 10,
-            b: 30 
+            b: 0 
         },
         xaxis: {
             range: [2016, 2031],
             autorange: false,
+            rangeslider: { range: ['1980', '2030'] },
         },
         yaxis: {
             range: [0, 61],
-            // range: [0, 260],
-            autorange: false
+            autorange: false,
         },
         legend: {
             font: {
