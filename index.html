@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
+        />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <div class="w-full bg-cover bg-center" style="height:32rem; background-image: url(https://media.npr.org/assets/img/2017/05/17/aid-1_wide-6117513f8733eb57f11dda487d44f6d7349f3256-s1600-c85.webp);">
+        <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+            <div class="text-center">
+                <h1 class="text-5xl py-4 font-bold" style="color: white;">Australian Foreign Aid</h1>
+                <h2 class="text-2xl text-white italic">Reducing child mortality: a multi-faceted approach</h2>
+                <div class="text-base text-white py-6"><h3>By <b>Edward Huang</b></h3>
+                    <h3 class="text-base text-white">May 10, 2021</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+    <div class="py-12 prose prose-sm sm:prose lg:prose-lg mx-auto">
+        <h2>How does Australia's overseas aid program support developing nations?</h2>
+        <p>Australia invests $4 billion annually towards development assistance with a focus on tackling poverty, improving prosperity, and security particularly in the Asia-Pacific region. This support is delivered through a combination of targeted government-partnered programs, investment into third party NGOs, community programs, and multilateral international organisations such as the United Nations and the World Health Organisation.</p>
+        <h2>
+            Who are Australia’s major foreign aid recipients?
+        </h2>
+        <h4>The Top 5 Recipients of Australian Aid 2019-20</h4>
+        <div id="sankey">
+            <script src="sankey.js"></script>
+        </div>
+        <ul>
+            <li><b>Papua New Guinea (PNG)</b> - Australia has always provided a high level of aid to PNG since its independence in 1975. Given the country’s size and proximity to Australia, ensuring stability, peace, and resilience in PNG is critical to Australia’s national interests.</li>
+            <li><b>Indonesia</b> - As with PNG, Indonesia is a close neighbour and strategic partner with a large population of 270 million.</li>
+            <li><b>Solomon Islands</b> - As with PNG, Indonesia is a close neighbour and strategic partner with a large population of 270 million.</li>
+            <li><b>Afghanistan</b> - Decades of war in Afghanistan have left the country with serious challenges to face. Australia contributes to recovery efforts alongside its allies.</li>
+            <li><b>East Timor</b> - As with PNG, Indonesia is a close neighbour and strategic partner with a large population of 270 million.</li>
+        </ul>
+        <p>The socioeconomic and environmental disadvantage experienced by people of these countries cause a number of inequities that can lead to poor health and low life expectancy. The inequality in health that exists can clearly be seen through the large disparity in levels of child mortality. Whilst significant progress has been made in the last half-century, these countries still have extremely high child mortality rates compared to high-income nations such as Australia.</p>
+        <h4>Child Mortality Rates (2017)</h4>
+        <p>Number of child (under five years old) deaths per 1000 births</p>
+        <div id="child-mortality-bar">
+            <script src="child-mortality-bar.js"></script>
+        </div>
+        <h3>The Global Goal for 2030</h3>
+        <p>As a part of the United Nation's Sustainable Development Goals established in 2015, every country in the world is committed to reducing the child mortality rate to 2.5% (25 deaths per 1000 births) by 2030. It is a tremendously important goal in reducing global suffering, however currently these nations are still far away from reaching the target.</p>
+        <p>Based on historic trends and rates of improvement we are able to make a reasonable prediction into the future. According to this projection, the countries are on track to reach this level by 2028. While this is a positive indicator, much work needs to be carried out to sucessfully achieve this in reality.</p>
+        <h4>Child Mortality Projection</h4>
+        <div id="child-mortality-predictor">
+            <script src="child-mortality-predictor.js"></script>
+        </div>
+        <h2>
+            Investment Priorities
+        </h2>
+        <p>Australia allocates it’s aid budget into improving specific focus areas based on a country's individual needs.</p>
+        <div id="investment-vis">
+            <script src="investment-vis.js"></script>
+        </div>
+        <h4>People with access to at least basic drinking water services (% of population)</h4>
+        <div id="water-access">
+            <script src="water-access.js"></script>
+        </div>
+        <h4>Births attended by skilled health staff (% of total)</h4>
+        <div id="childbirth-vis">
+            <script src="childbirth-vis.js"></script>
+        </div>
+        <p>Half of all under-5 deaths still occur in the first month of life. Key to preventing newborn deaths is ensuring every birth is attended by a skilled health personnel and every woman and newborn receives care within </p>
+        <h2>References</h2>
+        <ul>
+            <li>Ikon Images, & Butt, M. B. (n.d.). [Charitable Giving]. https://media.npr.org/assets/img/2017/05/17/aid-1_wide-6117513f8733eb57f11dda487d44f6d7349f3256-s1600-c85.webp</li>
+            <li>Roser, M. R. (2019). <em>Child mortality: achieving the global goal for 2030 would be a huge achievement - but we are currently far away.</em> Our World in Data. https://ourworldindata.org/child-mortality-global-goal</li>
+            <li><em>Who we work with.</em> (2021). Australian Government Department of Foreign Affairs and Trade. https://www.dfat.gov.au/aid/who-we-work-with/Pages/who-we-work-with</li>
+        </ul>
+    </div>
+</body>
+</html>
