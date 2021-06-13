@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reducing child mortality: a multi-faceted approach</title>
+    <title>Trump's Twitter Tendencies</title>
     <!-- Install tailwind via cdn to make styling simpler. -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link
@@ -16,29 +16,49 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Animate on Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <div class="w-full bg-cover bg-center" style="height:32rem; background-image: url(https://media.npr.org/assets/img/2017/05/17/aid-1_wide-6117513f8733eb57f11dda487d44f6d7349f3256-s1600-c85.webp);">
+    <div class="w-full bg-cover bg-center" style="height:32rem; background-image: url(https://www.gannett-cdn.com/presto/2019/08/15/PMJS/34827809-62f8-461d-ad05-3eb8c8136020-MJS_APC_Trump_Rally_0959_042719_wag.jpg);">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
             <div class="text-center">
-                <h1 class="text-5xl py-4 font-bold text-white">Australian Foreign Aid</h1>
-                <h2 class="text-2xl text-white italic">Reducing child mortality: a multi-faceted approach</h2>
+                <h1 class="text-5xl py-4 font-bold text-white">Trump's Twitter Tendencies</h1>
+                <h2 class="text-2xl text-white italic">A data-based visual analysis of Donald Trump's tweets as President</h2>
                 <div class="text-base text-white py-6"><h3>By <b>Edward Huang</b></h3>
-                    <h3 class="text-base text-white">May 10, 2021</h3>
+                    <h3 class="text-base text-white">June 13, 2021</h3>
                 </div>
             </div>
         </div>
     </div>
 </head>
 <body>
-    <div class="py-12 prose prose-sm sm:prose lg:prose-lg mx-auto">
-        <h2>How does Australia's overseas aid program support developing nations?</h2>
-        <p>Australia invests $4 billion annually towards development assistance with a focus on tackling poverty, improving prosperity, and security particularly in the Asia-Pacific region. This support is delivered through a combination of targeted government-partnered programs, investment into third party NGOs, community programs, and multilateral international organisations such as the United Nations and the World Health Organisation.</p>
-        <h3>
-            Who are Australia’s major foreign aid recipients?
-        </h3>
-        <h4>The Top 5 Recipients of Australian Aid 2019-20</h4>
-        <div data-aos="fade-right" id="sankey">
-            <script src="sankey.js"></script>
+    <div class="pt-12 prose prose-sm sm:prose lg:prose-lg mx-auto">
+        <h2>Which States were most tweeted about?</h2>
+        <p>The three states mentioned the most by Trump on Twitter during his presidential term - New York, Florida, Pennsylvania, and Texas (over 220+ mentions) - are unsurprisingly four of the top five most populous states in the US. Interestingly however, California - the US state with the largest population and most electoral votes with 55 - only ranked 7th comparatively. A potential reason for this is due to California generally being considered a 'safe blue state', having voted Democratic in every election since 1992. </p>
+        <div>
+            <h4>Total Mentions of US States by Donald Trump on Twitter</h4>
+            View: <select id="barChartSelector">
+                <option value="most">Most Mentioned</option>
+                <option value="least">Least Mentioned</option>
+            </select>
         </div>
+        <div data-aos="fade-right" id='states-bar'></div>
+        <p>* Only tweets with the words "Washington State" were counted to avoid confusion with the US Capital in Washington, D.C</p>
+        <p>The three states mentioned the most by Trump (New York, Florida, Pennsylvania, and Texas) are unsurprisingly four of the top five most populous states in the US. Interestingly however, California - the US state with the largest population and most electoral votes with 55 - only ranked 7th in comparison. A potential reason for this is due to California generally being considered a strongly Democratic state, having voted Democratic in every election since 1992. Perhaps in some ways, Trump considered it a losing battle not worth fighting and therefore focused less of his attention there.</p>
+        <img src="images/goingtohell.png">
+        <h4>Mapping Trump's Twitter Usage</h4>
+        View: <select class="bg-white rounded-lg py-2 px-2" id="mapSelector">
+            <option class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white" value="mentions">Mentions of US States per Electoral Vote</option>
+            <option class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white" value="sentiment">Average Sentiment per State</option>
+        </select>
+         <input class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="button" onclick="colourToggle()" value="Colourblind Mode: Off" id="colourblind">
+    </div>
+        <div class="flex justify-center">
+            <div class= "w-4/5" data-aos="fade-right" id='states'></div>
+        </div>
+    <div class="py-12 prose prose-sm sm:prose lg:prose-lg mx-auto">
+        <h3>
+            Insinuation of Corruption
+        </h3>
+        <h4>Cluster</h4>
+        <div data-aos="fade-right" id='plotDiv'></div>
         <ul>
             <li><b>Papua New Guinea (PNG)</b> - Australia has always provided a high level of aid to PNG since its independence in 1975. Given the country’s size and proximity to Australia, ensuring stability, peace, and resilience in PNG is critical to Australia’s national interests.</li>
             <li><b>Indonesia</b> - Indonesia is a close neighbour and strategic partner with a large population of 270 million. It's growth and success is of fundamental importance to Australia and the region.</li>
@@ -99,6 +119,7 @@
         </ul>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src='charts.js'></script>
   <script>
     AOS.init();
   </script>
